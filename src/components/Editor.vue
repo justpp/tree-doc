@@ -104,8 +104,8 @@ export default {
         },
         customInsert: (insertImg, result) => {
           if (result.code === 1){
-            let url = "http://sherp.cn"+result.data
-            // let url = result.data
+            // let url = "http://sherp.cn"+result.data
+            let url = result.data
             insertImg(url)
           } else {
             alert(result.msg)

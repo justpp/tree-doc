@@ -35,7 +35,9 @@
         <!-- header -->
         <el-header><h3>{{ this.currData.title }}</h3></el-header>
         <!-- 主体 -->
-        <el-main v-html="this.currData.content"></el-main>
+        <el-main >
+          <div class="w-e-text" v-html="this.currData.content"></div>
+        </el-main>
       </el-container>
     </el-container>
   </div>
@@ -100,13 +102,14 @@ export default {
       this.defaultExpandKeys = [];
       this.defaultExpandKeys = [this.currData.id];
     },
-    rightClick(MouseEvent) {
+    rightClick(MouseEvent,data) {
+      console.log('event',data)
       this.rightMenuVisible = false; // 先把模态框关死，目的是 第二次或者第n次右键鼠标的时候 它默认的是true
       this.rightMenuVisible = true;
       this.isEdit = false; // 每次点击左侧让右侧按钮回复默认
       this.isDisplay = true; // 每次点击左侧 右侧显示
       let menu = document.querySelector("#menu");
-      menu.style.left = MouseEvent.clientX + 60 + "px";
+      menu.style.left = MouseEvent.clientX + "px";
       // menu.style.left = MouseEvent.clientX - 184 + "px"; // 适配erp
       document.addEventListener("click", this.foo); // 给整个document添加监听鼠标事件，点击任何位置执行foo方法
       menu.style.top = MouseEvent.clientY - 10 + "px";
@@ -188,6 +191,8 @@ export default {
 };
 </script>
 <style>
+@import "~wangeditor/src/assets/style/text.less";
+
 .el-header {
   background-color: #fff;
   color: #333;
@@ -202,13 +207,6 @@ export default {
   height: 90vh;
 }
 
-.el-main {
-  background-color: #fff;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-}
-
 body > .el-container {
   margin-bottom: 40px;
 }
@@ -221,18 +219,18 @@ body > .el-container {
   text-align: center;
   margin-top: 10px;
   /*margin-left: 0.9px; // erp*/
-  margin-left: -42px;
+  margin-left: -35px;
 }
 .menu {
   height: 125px;
   /*width: 92px;// erp*/
-  width: 50px;
+  width: 40px;
   position: absolute;
   border-radius: 10px;
   border: 1px solid #999999;
   background-color: #f4f4f4;
 }
-li:hover {
+.menu li:hover {
   background-color: #1790ff;
   color: white;
 }
