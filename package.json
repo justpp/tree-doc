@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.8.1",
-    "element-plus": "^1.0.1-beta.5",
+    "element-plus": "^1.0.1-beta.6",
     "vue": "^3.0.4",
     "wangeditor": "^4.5.2"
   },

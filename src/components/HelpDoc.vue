@@ -65,7 +65,8 @@ export default {
       currData: [],
       currNode: {},
       defaultExpandKeys:[],
-      isEdit:false
+      isEdit:false,
+      canEdit: false
     }
   },
 
@@ -85,6 +86,7 @@ export default {
         } else {
           if (res.data.data.length > 0){
             this.data = res.data.data;
+            this.canEdit = res.data.can_edit
           } else {
            this.DocFormShow(this.currData);
           }
@@ -103,7 +105,11 @@ export default {
       this.defaultExpandKeys = [this.currData.id];
     },
     rightClick(MouseEvent,data) {
-      console.log('event',data)
+      this.leftClick(data);
+      // 权限控制
+      if (!this.canEdit){
+        return  false;
+      }
       this.rightMenuVisible = false; // 先把模态框关死，目的是 第二次或者第n次右键鼠标的时候 它默认的是true
       this.rightMenuVisible = true;
       this.isEdit = false; // 每次点击左侧让右侧按钮回复默认
