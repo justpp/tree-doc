@@ -54,7 +54,7 @@ export default {
     },
     formSubmit(){
       this.showVis = false;
-      axios.defaults.baseURL='/api'
+      // axios.defaults.baseURL='/api'
       axios.post('/help/insertOrUpdate',
           qs.stringify({
             id: this.form.id,

@@ -79,7 +79,7 @@ export default {
     },
     // 获取data数据
     getDocList(){
-      axios.defaults.baseURL='/api'
+      // axios.defaults.baseURL='/api'
       axios.get('/help/helpDocList',{}).then((res)=>{
         if (res.data.code !== 200){
           alert(res.data.msg)
@@ -157,7 +157,7 @@ export default {
       if (!confirm('确定删除本条记录么？')){
         return false;
       }
-      axios.defaults.baseURL='/api'
+      // axios.defaults.baseURL='/api'
       axios.post('/help/delOne',
           qs.stringify({
             id: this.currData.id,
