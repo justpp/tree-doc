@@ -15,7 +15,6 @@ export default {
       console.log(old_val)
       console.log(new_val)
       console.log('stash 1')
-      console.log('restore 1')
     });
     return {title,changeTitle}
   },
