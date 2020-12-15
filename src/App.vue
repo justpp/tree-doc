@@ -1,13 +1,15 @@
 <template>
   <HelpDoc ></HelpDoc>
+  <test></test>
 </template>
 
 <script>
 import HelpDoc from './components/HelpDoc.vue'
+import test from './components/Vue3'
 export default {
   name: 'App',
   components: {
-    HelpDoc
+    HelpDoc,test
   }
 }
 </script>

@@ -79,7 +79,7 @@ export default {
     },
     // 获取data数据
     getDocList(){
-      // axios.defaults.baseURL='/api'
+      axios.defaults.baseURL='/api'
       axios.get('/help/helpDocList',{}).then((res)=>{
         if (res.data.code !== 200){
           alert(res.data.msg)
