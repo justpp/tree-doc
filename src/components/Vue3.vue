@@ -14,7 +14,7 @@ export default {
     watch(()=>title.value,(new_val,old_val)=>{
       console.log(old_val)
       console.log(new_val)
-      console.log('stash 1')
+      console.log('stash 2')
     });
     return {title,changeTitle}
   },
